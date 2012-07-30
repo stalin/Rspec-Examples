@@ -1,0 +1,14 @@
+
+expectation: result.should equal(5)
+
+            result.should(equal(5))
+
+Evaluation:
+  1. equal(5) will return Equal#object initialized with 5 
+  2. that instance of Equal (matcher) will be passed to should() like result.should(matcher)
+  3. should() calls matcher.matches?(self)
+  4. matches?(self) returns true, then the Expectation is considered met, and execution moves on to the next line in the example.
+  5. If it returns false, ExpectationNotMetException is raised with a message returned by matcher.failure_message().
+
+
+
